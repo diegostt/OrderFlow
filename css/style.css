@@ -16,4 +16,3 @@ input, textarea, button { padding:10px; border-radius:5px; border:1px solid #ccc
 button { background:#0078d4; color:white; border:none; cursor:pointer; }
 button:hover { background:#005fa3; }
 footer { background:#005fa3; color:white; text-align:center; padding:20px; margin-top:50px; }
-
