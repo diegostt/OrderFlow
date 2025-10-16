@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrderFlow - Servicios</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="logo" style="font-family: 'Playfair Display', serif;">OrderFlow</div>
+  <input type="checkbox" id="menu-toggle" style="display:none;">
+  <label for="menu-toggle" class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <nav>
+  <a href="index.html" style="font-family: 'Playfair Display', serif;">Inicio</a>
+  <a href="sobre-nosotros.html" style="font-family: 'Playfair Display', serif;">Sobre Nosotros</a>
+  <a href="servicios.html" class="active" style="font-family: 'Playfair Display', serif;">Servicios</a>
+  <a href="precios.html" style="font-family: 'Playfair Display', serif;">Precios</a>
+  <a href="contacto.html" style="font-family: 'Playfair Display', serif;">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="content">
+  <h1 style="text-align: center; font-family: 'Playfair Display', serif; margin-bottom:32px;">Servicios</h1>
+    <p><!-- Editable --> Estos son los servicios que ofrecemos en OrderFlow para mejorar la atencion al cliente, ahorrar tiempo y dejar de hacer tareas repetitivas.</p>
+    <div class="cards">
+      <div class="card">
+  <h3 style="font-family: 'Playfair Display', serif; margin-bottom:18px;">Automatización de pedidos</h3>
+  <p style="margin-bottom:18px; text-align:left;">Dejate de llamadas, confusiones y pérdida de tiempo.<br>Configuro un sistema donde:</p>
+    <ol style="text-align:left; margin-left:0; padding-left:22px; margin-bottom:0;">
+    <li>El cliente envía su pedido a través de un formulario personalizado.</li><br>
+    <li>El encargado recibe <strong>un correo automático</strong> con los detalles del pedido.</li><br>
+    <li>Cuando el pedido está listo, el cliente recibe una <strong>notificación automática</strong> para recogerlo.</li>
+  </ol>
+      </div>
+      <div class="card">
+  <h3 style="font-family: 'Playfair Display', serif;"><!--Servicio 2--></h3>
+        <p><!-- Editable --> <!--Detalle del servicio 2 editable.--></p>
+      </div>
+      <div class="card">
+  <h3 style="font-family: 'Playfair Display', serif;"><!--Servicio 3--></h3>
+        <p><!-- Editable --> <!--Detalle del servicio 3 editable.--></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#000; color:white; text-align:center; padding:20px; margin-top:0; position:static; left:0; bottom:0; width:100%;">
+  <p style="margin:0;">© 2025 OrderFlow. Todos los derechos reservados.</p>
+</footer>
+<style>
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    z-index: 101;
+  }
+  .menu-icon span {
+    height: 4px;
+    width: 28px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+  }
+  @media (max-width: 700px) {
+    nav {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100vw;
+      background: #000;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0 10px 30px;
+      display: none;
+      z-index: 100;
+    }
+    header {
+      flex-direction: row;
+      padding: 15px 20px;
+    }
+    .menu-icon {
+      display: flex;
+    }
+    #menu-toggle:checked + .menu-icon + nav {
+      display: flex;
+    }
+    nav a {
+      margin: 10px 0;
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+</style>
+</body>
+</html>
