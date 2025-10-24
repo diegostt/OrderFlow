@@ -88,3 +88,12 @@ input, textarea, button { padding:10px; border-radius:5px; border:1px solid #ccc
 button { background:#0078d4; color:white; border:none; cursor:pointer; }
 button:hover { background:#00518bd5; }
 footer { background:#000; color:white; text-align:center; padding:8px; margin-top:0; position:fixed; left:0; bottom:0; width:100%; font-size:0.95rem; }
+
+/* Resaltar importes en precios */
+.price-highlight {
+	font-weight: 700;
+	font-size: 1.05rem;
+	color: #fff;
+	display: inline-block;
+	white-space: nowrap;
+}
