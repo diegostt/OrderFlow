@@ -97,3 +97,25 @@ footer { background:#000; color:white; text-align:center; padding:8px; margin-to
 	display: inline-block;
 	white-space: nowrap;
 }
+
+/* Responsive: mejor apariencia en móvil */
+@media (max-width: 700px) {
+	header { padding: 10px 16px; }
+	header .logo { font-size: 1.1rem; }
+	main { padding-top: 90px; padding-left: 12px; padding-right: 12px; max-width: 100%; }
+	h1 { font-size: 1.9rem !important; }
+	.hero { text-align: left; padding: 36px 12px; }
+	.hero h1 { font-size: 1.8rem; }
+	.hero p { font-size: 1rem; }
+	.cards { flex-direction: column; gap: 14px; }
+	.card { width: 100%; margin: 8px 0; padding: 18px; }
+	.benefits-content { flex-direction: column; padding: 0 8px; }
+	.benefits-image { margin: 0 0 18px 0; flex: 0 0 auto; }
+	.benefits-ul { padding-left: 18px; font-size: 1rem; }
+	.menu-icon { display: flex; }
+	nav { display: none !important; }
+	/* When the checkbox menu-toggle is checked (markup uses + .menu-icon + nav), the inline rules in pages will show nav; keep nav styling safe here */
+	footer { position: static; padding: 14px; }
+	input, textarea, button { width: 100%; }
+	.price-highlight { font-size: 1rem; }
+}
