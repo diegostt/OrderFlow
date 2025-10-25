@@ -119,3 +119,36 @@ footer { background:#000; color:white; text-align:center; padding:8px; margin-to
 	input, textarea, button { width: 100%; }
 	.price-highlight { font-size: 1rem; }
 }
+
+/* Global responsive helpers */
+img { max-width: 100%; height: auto; display: block; }
+.content { padding-left: 12px; padding-right: 12px; }
+/* Ensure menu opens when checkbox is checked (consistent across pages) */
+@media (max-width: 700px) {
+	#menu-toggle:checked + .menu-icon + nav { display: flex !important; }
+	nav { flex-direction: column; }
+}
+
+/* Forms and inputs full width on small screens */
+@media (max-width: 700px) {
+	form { padding: 0 6px; }
+	input, textarea, button { box-sizing: border-box; }
+}
+
+/* About page paragraph container tweaks */
+.parrafo-centro { padding: 0 12px; }
+
+/* Make cards left-aligned on wide screens for readability */
+@media (min-width: 701px) {
+	.card { text-align: left; }
+}
+
+/* Page-specific title for left alignment with responsive margins */
+.page-title {
+	text-align: left;
+	margin: 32px 0 32px 24px;
+	font-size: 2.2rem;
+}
+@media (max-width: 700px) {
+	.page-title { margin-left: 12px; margin-right: 12px; font-size: 1.6rem; }
+}
