@@ -47,7 +47,7 @@
 
     console.log("Datos que se van a enviar:", data);
 
-    await fetch("https://script.google.com/macros/s/TU_URL_DE_APPS_SCRIPT/exec", {
+    await fetch("http://localhost:5678/webhook-test/webhook-contacto", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
