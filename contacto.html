@@ -31,7 +31,7 @@
   <h1 style="font-family: 'Playfair Display', serif; margin-bottom:32px;">Contacto</h1>
   <p style="max-width:600px; margin:20px auto; padding:0 5%; line-height:1.6; margin-bottom:24px;">Rellena el formulario y nos pondremos en contacto contigo.</p>
 
-    <form action="https://formspree.io/f/manpljej" method="POST">
+    <form id="contact-form">
       <label>Nombre *</label>
       <input type="text" name="nombre" required>
 
@@ -47,6 +47,22 @@
 
       <button type="submit">Enviar</button>
     </form>
+
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        await fetch("https://script.google.com/macros/s/AKfycbxWDt8RtLA-9We4HQqvB-f2mFJQAo1ZQtjnemUDud7-s3cIng1JL1AQvXqAQ5w7RoeA/exec", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+        alert("Formulario enviado con éxito!");
+        e.target.reset();
+      })
+    </script>
   </section>
 </main>
 
