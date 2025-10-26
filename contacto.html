@@ -40,23 +40,6 @@
       <button type="submit">Enviar</button>
     </form>
 
-    <script>
-  document.getElementById("contact-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target).entries());
-
-    console.log("Datos que se van a enviar:", data);
-
-    await fetch("http://localhost:5678/webhook-test/webhook-contacto", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-
-    alert("Formulario enviado con éxito");
-    e.target.reset();
-  });
-</script>
   </section>
 </main>
 
@@ -115,5 +98,22 @@
     }
   }
 </style>
+<script>
+  document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+
+    console.log("Datos que se van a enviar:", data);
+
+    await fetch("http://localhost:5678/webhook-test/webhook-contacto", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    alert("Formulario enviado con éxito");
+    e.target.reset();
+  });
+</script>
 </body>
 </html>
