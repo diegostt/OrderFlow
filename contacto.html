@@ -32,18 +32,10 @@
   <p style="max-width:600px; margin:20px auto; padding:0 5%; line-height:1.6; margin-bottom:24px;">Rellena el formulario y nos pondremos en contacto contigo.</p>
 
     <form id="contact-form">
-      <label>Nombre *</label>
-      <input type="text" name="nombre" required>
-
-      <label>Nombre del negocio *</label>
-      <input type="text" name="negocio" required>
-
-      <label>Email *</label>
-      <input type="email" name="email" required>
-
-      <label>Teléfono *</label>
-      <input type="tel" name="telefono" required>
-
+       <input name="nombre" placeholder="Nombre" required>
+       <input name="negocio" placeholder="Tipo de negocio" required>
+       <input name="email" type="email" placeholder="Email" required>
+       <input name="telefono" placeholder="Teléfono" required>
 
       <button type="submit">Enviar</button>
     </form>
@@ -52,7 +44,7 @@
       document.getElementById("contact-form").addEventListener("submit", async (e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.target).entries());
-        await fetch("https://script.google.com/macros/s/AKfycbxWDt8RtLA-9We4HQqvB-f2mFJQAo1ZQtjnemUDud7-s3cIng1JL1AQvXqAQ5w7RoeA/exec", {
+        await fetch("https://script.google.com/macros/s/AKfycbzQ16eImByXabXAtROu9dTI6LOmABzgcXmBvC0ZQtR2gHnrjFfTArO1r0GBpdX-Zwja/exec", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
