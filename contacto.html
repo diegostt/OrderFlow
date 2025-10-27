@@ -39,7 +39,22 @@
 
       <button type="submit">Enviar</button>
     </form>
+<script>
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
+  const data = Object.fromEntries(new FormData(e.target).entries());
+
+  await fetch("https://script.google.com/macros/s/AKfycbzn86W5vATTE6k1xv9bv6A0gZSuxD7Oy7oEYC-W8IJGOqxSF9qYBqRpgbtWoo3kiyp-/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  alert("Formulario enviado con éxito");
+  e.target.reset();
+});
+</script>
   </section>
 </main>
 
@@ -98,42 +113,5 @@
     }
   }
 </style>
-
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const statusDiv = document.getElementById('status');
-  statusDiv.textContent = 'Enviando...';
-  
-  const formData = {
-    nombre: e.target.nombre.value,
-    email: e.target.negocio.value,
-    asunto: e.target.email.value,
-    mensaje: e.target.telefono.value,
-  };
-  
-  try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxxsNzd7V1YznB_UnOK_6_K35Ob0DeQRvtp4blrzFErsSqT9_p64e2zqN5pSUT4ZInk/exec', {
-      method: 'POST',
-      mode: 'no-cors', // Importante para Apps Script
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-    });
-    
-    // Con no-cors no podemos leer la respuesta, pero si no hay error, asumimos éxito
-    statusDiv.textContent = '¡Mensaje enviado correctamente!';
-    statusDiv.style.color = 'green';
-    e.target.reset();
-    
-  } catch (error) {
-    statusDiv.textContent = 'Error al enviar el mensaje';
-    statusDiv.style.color = 'red';
-  }
-});
-</script>
 </body>
 </html>
