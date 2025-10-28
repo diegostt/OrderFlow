@@ -122,8 +122,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     if (result.success) {
       alert("Formulario enviado correctamente!");
       e.target.reset();
-    } else {
-      alert("Hubo un problema: " + result.error);
     }
 
   } catch (error) {
