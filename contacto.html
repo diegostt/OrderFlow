@@ -35,7 +35,6 @@
        <input id="nombre" name="nombre" placeholder="Nombre" required>
        <input id="negocio" name="negocio" placeholder="Tipo de negocio" required>
        <input id="email" name="email" type="email" placeholder="Email" required>
-       <input id="telefono" name="telefono" placeholder="Teléfono" required>
 
       <button type="submit">Enviar</button>
     </form>
@@ -105,7 +104,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     nombre: document.getElementById("nombre").value,
     negocio: document.getElementById("negocio").value,
     email: document.getElementById("email").value,
-    telefono: document.getElementById("telefono").value
   };
 
   console.log("Enviando datos:", data);
