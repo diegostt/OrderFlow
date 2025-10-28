@@ -112,7 +112,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   console.log("Enviando datos:", data);
 
   try {
-    const response = await fetch("http://localhost:5678/webhook-test/correos-orderflow", {
+    const response = await fetch("http://localhost:5678/webhook/correos-orderflow", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
