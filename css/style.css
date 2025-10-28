@@ -164,3 +164,27 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 700px) {
 	.page-title { margin-left: 12px; margin-right: 12px; font-size: 1.6rem; }
 }
+
+/* Separator with centered text (used under contact form) */
+.or-line {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	max-width: 500px; /* match form max-width */
+	margin: 20px auto 8px auto;
+}
+.or-line::before,
+.or-line::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: #e2e2e2;
+}
+.or-line span { color: #fff; font-size: 0.95rem; white-space: nowrap; }
+.contact-email { text-align: center; font-weight: 600; margin-bottom: 24px; }
+.contact-email a { color: #47a2e8; text-decoration: none; }
+.contact-email a:hover { text-decoration: underline; }
+
+@media (max-width:700px) {
+	.or-line { max-width: 100%; padding: 0 12px; }
+}
