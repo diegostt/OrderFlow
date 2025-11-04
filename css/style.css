@@ -167,11 +167,13 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Style for 'Cómo funciona' link in services card */
 .how-link { margin-left: 24px; margin-top: 12px; }
-.how-link a { color: #47a2e8; text-decoration: none; font-weight: 600; }
-.how-link a:hover { text-decoration: underline; }
+.how-link a { color: #0478d6; text-decoration: none; font-weight: 700; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 8px; padding: 0; border-radius: 0; background: none; }
+.how-link a:hover { text-decoration: underline; background: none; }
 @media (max-width:700px) {
   .how-link { margin-left: 12px; }
 }
+
+.how-icon { display:inline-block; font-size:1.3rem; color:inherit; line-height:1; }
 
 /* Separator with centered text (used under contact form) */
 .or-line {
