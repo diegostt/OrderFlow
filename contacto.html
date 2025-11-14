@@ -42,6 +42,8 @@
 
       <button type="submit">Enviar</button>
     </form>
+    <!-- Mensaje de estado (oculto por defecto) -->
+    <div id="form-status" class="form-status" role="status" aria-live="polite" style="display:none; text-align:center; margin-top:12px; padding:10px; border-radius:6px;"></div>
     <div class="or-line"><span>O contáctanos por</span></div>
     <p class="contact-email"><a href="mailto:orderflow.team@gmail.com">orderflow.team@gmail.com</a></p>
   </section>
@@ -101,10 +103,17 @@
       border-radius: 0;
     }
   }
+  .form-status { font-size: 0.95rem; }
+  .form-status.success { background: #0b6623; color: #fff; }
+  .form-status.error { background: #6b0b0b; color: #fff; }
 </style>
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
   e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const statusEl = document.getElementById('form-status');
 
   const data = {
     nombre: document.getElementById("nombre").value,
@@ -112,7 +121,11 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     email: document.getElementById("email").value,
   };
 
-  console.log("Enviando datos:", data);
+  // Mostrar estado de envío (disable botón)
+  submitBtn.disabled = true;
+  statusEl.style.display = 'block';
+  statusEl.className = 'form-status';
+  statusEl.textContent = 'Enviando...';
 
   try {
     const response = await fetch("http://localhost:5678/webhook/contacto-orderflow", {
@@ -122,17 +135,32 @@ document.getElementById("contact-form").addEventListener("submit", async functio
       body: JSON.stringify(data)
     });
 
-    const result = await response.json();
-    console.log("Respuesta del servidor:", result);
+    // Intentar parsear JSON; si falla, tratar como error
+    let result = {};
+    try { result = await response.json(); } catch (e) { /* ignore */ }
 
-    if (result.success) {
-      alert("Formulario enviado correctamente!");
-      e.target.reset();
+    if (response.ok && (result.success === undefined || result.success)) {
+      statusEl.classList.add('success');
+      statusEl.textContent = 'Formulario enviado correctamente. Gracias — te contactamos pronto.';
+      form.reset();
+    } else {
+      statusEl.classList.add('error');
+      statusEl.textContent = 'No se pudo enviar el formulario. Por favor inténtalo de nuevo o escríbenos a orderflow.team@gmail.com';
+      console.error('Respuesta no OK:', response.status, result);
     }
 
   } catch (error) {
     console.error("Error al enviar:", error);
-    alert("Hubo un error al enviar el formulario. Porfavor contáctanos en orderflow.team@gmail.com");
+    statusEl.classList.add('error');
+    statusEl.textContent = 'Hubo un error al enviar el formulario. Por favor contáctanos en orderflow.team@gmail.com';
+  } finally {
+    // Rehabilitar botón y ocultar el mensaje después de 6 segundos
+    submitBtn.disabled = false;
+    setTimeout(() => {
+      statusEl.style.display = 'none';
+      statusEl.className = 'form-status';
+      statusEl.textContent = '';
+    }, 6000);
   }
 });
 </script>
