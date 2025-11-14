@@ -141,7 +141,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
     if (response.ok && (result.success === undefined || result.success)) {
       statusEl.classList.add('success');
-      statusEl.textContent = 'Formulario enviado correctamente. Gracias — te contactamos pronto.';
+      statusEl.textContent = 'Formulario enviado correctamente!';
       form.reset();
     } else {
       statusEl.classList.add('error');
