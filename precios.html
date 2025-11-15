@@ -31,13 +31,26 @@
   <p style="text-align: left;">Nuestros planes están pensados para que cualquier negocio pueda automatizar tareas repetitivas sin complicarse. Elige el que mejor se ajuste a lo que necesitas y haz que todo funcione solo sin intervenir. Incluye mantenimiento al <strong>mes</strong>.</p>
     <div class="cards">
       <div class="card">
-  <h3 style="font-family: 'Playfair Display', serif;">Automatización de pedidos</h3>
-  <p style="text-align: center; margin-top:8px;">Ideal para negocios que reciban pedidos y quieran ahorrar tiempo, reducir errores y mejorar la atención al cliente.</p><br>
   
-    <ul class="benefits-ul" style="margin-top:8px; font-size:1rem; text-align: left;">
-      <li>Precio de instalación: <span class="price-highlight">75€</span></li>
-      <li>Precio de mantenimiento: <span class="price-highlight">35€</span></li>
+  <h3 style="font-family: 'Playfair Display', serif; text-align: center;">Agente de citas</h3>
+  <p style="text-align: left; margin-top:8px;">Ideal para negocios que gestionan reservas o citas:</p>
+  
+
+    <ul class="benefits-list" style="text-align:left; margin:0; padding-left:18px; list-style: none;">
+      <li style="margin:6px 0;">✅ Ahorra tiempo</li>
+      <li style="margin:6px 0;">✅ Evita errores</li>
+      <li style="margin:6px 0;">✅ Mejora la atención al cliente</li>
     </ul>
+    <ul class="price-details" style="text-align:left; margin:8px 0 0 18px; padding:0; list-style: disc;">
+      <li style="margin:6px 0;">Precio de instalación: <strong>149&nbsp;€</strong></li>
+    </ul>
+   
+    <!-- Línea divisoria y precio final -->
+    <hr class="price-divider" />
+    <p class="final-price" style="text-align:center; margin-top:12px; font-family: 'Playfair Display';">
+      <span class="final-amount">49,99&nbsp;€</span>
+      <span class="per-month">/mes</span>
+    </p>
       </div>
       <div class="card">
   <h3 style="font-family: 'Playfair Display', serif;"></h3>
@@ -105,6 +118,14 @@
       border-radius: 0;
     }
   }
+  /* Estilos para el precio final */
+  .price-divider { border: none; height: 1px; background: rgba(255,255,255,0.12); margin: 12px 0; }
+  .final-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin: 0; }
+  .final-price .final-amount { font-weight: 700; white-space: nowrap; }
+  .final-price .per-month { font-size: 0.85em; margin-left:6px; color: rgba(255,255,255,0.85); }
+  /* Precio dentro del cuadro, arriba izquierda */
+  .card { position: relative; }
+  /* .card-price-top removed (price moved/hidden) */
 </style>
 </body>
 </html>
